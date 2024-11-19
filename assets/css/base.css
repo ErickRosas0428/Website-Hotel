@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base para pantallas grandes */
+  font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+  line-height: 1.6;
+  color: var(--font-color);
+  background-color: var(--background-color);
+}
+
+/* Variables globales */
+:root {
+  --primary-color: #0a79f0; /* Color principal */
+  --secondary-color: #6C757D; /* Color secundario */
+  --background-color: #f9f9f9; /* Fondo claro */
+  --font-color: #333; /* Texto principal */
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas medianas (tabletas, etc.) */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px; /* Reducir ligeramente el tamaño base */
+  }
+  
+  body {
+    line-height: 1.5; /* Ajustar la separación entre líneas */
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px; /* Tamaño base más pequeño */
+  }
+
+  body {
+    line-height: 1.4; /* Más compacto en pantallas pequeñas */
+  }
+}
+
+  

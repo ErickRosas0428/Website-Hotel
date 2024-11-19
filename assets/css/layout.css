@@ -1,0 +1,211 @@
+/* Header */
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  position: relative;
+  z-index: 10; /* Asegura que el header siempre esté por encima */
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header .navbar-brand {
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+header nav a span {
+  color: #505050;
+  font-weight: 700;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+/* Cuando el menú está cerrado (solo aplica en pantallas pequeñas) */
+header ul.closed {
+  max-height: 0;
+  margin-top: 0;
+}
+
+/* Cuando el menú está abierto (pantallas pequeñas) */
+header ul.open {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  max-height: 300px;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1rem; /* Tamaño de fuente ajustable */
+}
+
+/* Icono de hamburguesa */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.3rem;
+  justify-content: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Hero Section (Carrusel) */
+.hero {
+  text-align: center;
+  background: rgba(255, 208, 0, 0.918) no-repeat center center/cover;
+  color: white;
+  padding: 3rem 1rem;
+  position: relative;
+  z-index: 5;
+  transition: margin-top 0.3s ease-in-out;
+}
+
+.hero.open {
+  margin-top: 300px; /* Desplaza el carrusel hacia abajo cuando el menú está abierto */
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem; /* Tamaño ajustable */
+}
+
+.hero button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: var(--font-color);
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 1rem; /* Ajuste para pantallas pequeñas */
+}
+
+/* Media Queries */
+
+/* Pantallas pequeñas (menores a 770px) */
+@media (max-width: 770px) {
+  header ul {
+    display: none; /* Oculta el menú inicialmente */
+  }
+
+  header ul.open {
+    display: flex; /* Muestra el menú cuando está abierto */
+  }
+
+  .hamburger {
+    display: flex; /* Aparece el icono de hamburguesa */
+  }
+
+  .hero.open {
+    margin-top: 300px; /* Ajusta la posición del carrusel */
+  }
+
+  .hero h1 {
+    font-size: 1.8rem; /* Reduce el tamaño del título */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Texto más pequeño */
+  }
+
+  footer {
+    font-size: 0.9rem; /* Texto más pequeño */
+  }
+}
+
+/* Pantallas extra pequeñas (menores a 480px) */
+@media (max-width: 480px) {
+  header ul li a {
+    font-size: 0.9rem; /* Reduce el tamaño del texto del menú */
+  }
+
+  .hero h1 {
+    font-size: 1.5rem; /* Título más pequeño */
+  }
+
+  .hero p {
+    font-size: 0.9rem; /* Texto más pequeño */
+  }
+
+  .hero button {
+    font-size: 0.8rem; /* Botón más pequeño */
+    padding: 0.4rem 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem; /* Texto más pequeño */
+  }
+}
+
+/* Pantallas grandes (mayores o iguales a 770px) */
+@media (min-width: 770px) {
+  header ul {
+    display: flex !important; /* Menú siempre visible */
+    max-height: none;
+  }
+
+  .hamburger {
+    display: none; /* Oculta el botón de hamburguesa */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Texto más claro */
+  }
+
+  footer {
+    font-size: 1rem; /* Tamaño estándar */
+  }
+}
